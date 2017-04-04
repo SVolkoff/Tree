@@ -28,6 +28,14 @@ SCENARIO("get root", "[init]")
   REQUIRE(test.root_() != 0);
 }
 
+SCENARIO("insert equal elements", "[insert]")
+{
+  Tree<int> test;
+  test.insert_node(4);
+  test.insert_node(4);
+  REQUIRE(test.get_count() == 1);
+}
+
 SCENARIO ("reading/writing", "[init]")
 {
   Tree<int> test1;
