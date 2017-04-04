@@ -51,6 +51,11 @@ int Tree<T>::get_count()const
 }
 
 
+void insert(const T& value) 
+{ 
+insert(root, value); 
+} 
+
 template<class T>
 void Tree<T>::insert_node(const T&x)
 {
@@ -94,6 +99,12 @@ template<typename T>
 void Tree<T>::reading(const std::string filename)
 {
 	ifstream fin(filename);
+	if (root != nullptr)
+	{
+		deleteNode(root->Right);
+		deleteNode(root->Left);
+		root = 0;
+	}
 	T temp;
 	fin >> temp;
 	while (fin)
